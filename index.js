@@ -4,7 +4,7 @@ module.exports = {
     es6: true,
     browser: true
   },
-  plugins: ['@typescript-eslint', 'import', 'react'],
+  plugins: ['prettier', '@typescript-eslint', 'import', 'react', 'jsx-a11y'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true // Allows for the parsing of JSX
@@ -35,6 +35,7 @@ module.exports = {
     'no-void': 0,
     'no-undef-init': 0,
     'class-methods-use-this': 0,
+    'no-array-constructor': 2,
     'import/no-extraneous-dependencies': [
       'error',
       {
@@ -67,7 +68,65 @@ module.exports = {
     'jsx-no-lambda': 0,
     'no-console': 0,
     'interface-name': 0,
-    'no-multiple-empty-lines': 'error'
+    'no-multiple-empty-lines': 'error',
+    '@typescript-eslint/naming-convention': [
+      1,
+      {
+        selector: 'default',
+        format: ['camelCase', 'PascalCase'],
+        leadingUnderscore: 'forbid',
+        trailingUnderscore: 'forbid'
+      },
+      {
+        selector: 'variable',
+        format: ['camelCase']
+      },
+      {
+        selector: 'variable',
+        modifiers: ['const'],
+        format: ['camelCase', 'UPPER_CASE']
+      },
+      {
+        selector: 'variable',
+        types: ['function'],
+        modifiers: ['const'],
+        format: ['PascalCase', 'camelCase']
+      },
+      {
+        selector: 'variable',
+        types: ['boolean'],
+        format: ['PascalCase'],
+        prefix: ['is', 'should', 'has', 'can', 'did', 'will', 'show']
+      },
+      {
+        selector: 'variable',
+        types: ['array'],
+        format: ['camelCase'],
+        suffix: ['s']
+      },
+      {
+        selector: 'typeLike',
+        format: ['PascalCase']
+      },
+      {
+        selector: ['interface'],
+        format: ['PascalCase'],
+        prefix: ['I']
+      },
+      {
+        selector: ['typeAlias'],
+        format: ['PascalCase'],
+        prefix: ['T']
+      },
+      {
+        selector: 'property',
+        format: null
+      },
+      {
+        selector: 'method',
+        format: null
+      }
+    ]
   },
   settings: {
     'import/resolver': {

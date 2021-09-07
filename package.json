@@ -1,12 +1,13 @@
 {
   "name": "@hurtigruten/eslint-config-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shared eslint configuration for Hurtigruten projects",
   "main": "index.js",
   "license": "MIT",
   "keywords": [
     "eslint",
-    "eslintconfig"
+    "eslintconfig",
+    "react"
   ],
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.29.3",
